@@ -1,5 +1,5 @@
 {
   "packageManager": "python",
-  "packageName": "jupyterlab_google_analytics",
-  "uninstallInstructions": "Use your Python package manager (pip, conda, etc.) to uninstall the package jupyterlab_google_analytics"
+  "packageName": "jupyterlab_anaconda_analytics",
+  "uninstallInstructions": "Use your Python package manager (pip, conda, etc.) to uninstall the package jupyterlab_anaconda_analytics"
 }
