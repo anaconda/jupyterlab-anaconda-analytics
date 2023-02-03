@@ -1,14 +1,38 @@
 {
   "jupyter.lab.shortcuts": [],
-  "title": "jupyterlab-google-analytics",
-  "description": "jupyterlab-google-analytics settings.",
+  "title": "jupyterlab-anaconda-analytics",
+  "description": "jupyterlab-anaconda-analytics settings.",
   "type": "object",
   "properties": {
-    "trackingId": {
-      "type": "string",
-      "title": "Tracking ID",
-      "description": "Google Analytics Tracking ID",
-      "default": "G-XXXXXXXXX"
+    "analytics": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "id": {
+            "type": "string",
+            "description": "Google Analytics App ID",
+            "default": "ga"
+          },
+          "secret": {
+            "type": "string",
+            "description": "Google Analytics Tracking ID",
+            "default": "123456789"
+          }
+        },
+
+        {
+          "id": {
+            "type": "string",
+            "description": "Heap App ID",
+            "default": "heap"
+          },
+          "secret": {
+            "type": "string",
+            "description": "Heap App ID",
+            "default": "123456789"
+          }
+        }
+      ]
     }
   },
   "additionalProperties": false
