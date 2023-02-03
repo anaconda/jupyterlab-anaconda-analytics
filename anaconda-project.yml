@@ -20,7 +20,7 @@ packages:
 
 commands:
   setup:
-    unix:
+    unix: |
       pip install -ve ".[test]"
       jupyter labextension develop --overwrite .
       jupyter server extension enable jupyterlab_anaconda_analytics
