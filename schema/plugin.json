@@ -1,39 +1,21 @@
 {
-  "jupyter.lab.shortcuts": [],
-  "title": "jupyterlab-anaconda-analytics",
-  "description": "jupyterlab-anaconda-analytics settings.",
-  "type": "object",
-  "properties": {
-    "analytics": {
-      "type": "array",
-      "prefixItems": [
-        {
-          "id": {
-            "type": "string",
-            "description": "Google Analytics App ID",
-            "default": "ga"
-          },
-          "secret": {
-            "type": "string",
-            "description": "Google Analytics Tracking ID",
-            "default": "123456789"
-          }
-        },
-
-        {
-          "id": {
-            "type": "string",
-            "description": "Heap App ID",
-            "default": "heap"
-          },
-          "secret": {
-            "type": "string",
-            "description": "Heap App ID",
-            "default": "123456789"
-          }
-        }
-      ]
-    }
-  },
-  "additionalProperties": false
+	"jupyter.lab.shortcuts": [],
+	"title": "jupyterlab-anaconda-analytics",
+	"description": "jupyterlab-anaconda-analytics settings.",
+	"type": "object",
+	"properties": {
+		"ga": {
+			"type": "string",
+			"title": "Google Analytics ID",
+			"description": "Google Analytics Tracking ID",
+			"default": "123456789"
+		},
+		"heap": {
+			"type": "string",
+			"title": "Heap ID",
+			"description": "Heap App ID",
+			"default": "123456789"
+		}
+	},
+	"additionalProperties": false
 }

@@ -3,9 +3,9 @@ import {
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
 
-// import { ISettingRegistry } from '@jupyterlab/settingregistry';
+import { ISettingRegistry } from '@jupyterlab/settingregistry';
 
-import { settings, ScriptMetadata } from './config';
+import { ScriptMetadata } from './config';
 import { loadApp } from './utils';
 
 /**
@@ -14,20 +14,28 @@ import { loadApp } from './utils';
 const plugin: JupyterFrontEndPlugin<void> = {
   id: 'jupyterlab-anaconda-analytics:plugin',
   autoStart: true,
-  // requires: [ISettingRegistry],
+  requires: [ISettingRegistry],
   activate: async (
-    app: JupyterFrontEnd
-    // settingRegistry: ISettingRegistry
+    app: JupyterFrontEnd,
+    settingRegistry: ISettingRegistry
   ): Promise<any> => {
     try {
-      // TODO: get this to work
-      // const settings = await settingRegistry.load(plugin.id);
-      // const analytics = settings.get('analytics').composite as any[];
+      const scriptMetaData: ScriptMetadata[] = [];
+      // Load plugin into the settings registry.
+      const settings = await settingRegistry.load(plugin.id);
 
-      // TODO: remove this
-      const analytics = settings.analytics;
+      // Get google analytics tracking id
+      const gaAnalytics = settings.get('ga').composite as string;
+      // Get heap analytics tracking id
+      const heapAnalytics = settings.get('heap').composite as string;
 
-      analytics.forEach((app: ScriptMetadata) => {
+      // push the tracking id's into the array
+      scriptMetaData.push(
+        { id: 'ga', secret: gaAnalytics },
+        { id: 'heap', secret: heapAnalytics }
+      );
+
+      scriptMetaData.forEach((app: ScriptMetadata) => {
         loadApp(app.id, app.secret);
       });
     } catch (err) {
