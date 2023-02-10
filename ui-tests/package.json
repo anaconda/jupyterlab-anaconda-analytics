@@ -1,7 +1,7 @@
 {
-  "name": "jupyterlab-google-analytics-ui-tests",
+  "name": "jupyterlab-anaconda-analytics-ui-tests",
   "version": "1.0.0",
-  "description": "JupyterLab jupyterlab-google-analytics Integration Tests",
+  "description": "JupyterLab jupyterlab-anaconda-analytics Integration Tests",
   "private": true,
   "scripts": {
     "start": "jupyter lab --config jupyter_server_test_config.py",

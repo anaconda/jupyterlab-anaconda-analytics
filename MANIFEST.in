@@ -9,7 +9,7 @@ include ts*.json
 include *.config.js
 include yarn.lock
 
-graft jupyterlab_google_analytics/labextension
+graft jupyterlab_anaconda_analytics/labextension
 
 # Javascript files
 graft src

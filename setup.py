@@ -1,5 +1,5 @@
 """
-jupyterlab_google_analytics setup
+jupyterlab_anaconda_analytics setup
 """
 import json
 import sys
@@ -13,7 +13,7 @@ HERE = Path(__file__).parent.resolve()
 pkg_json = json.loads((HERE / "package.json").read_bytes())
 
 # The name of the project
-name = "jupyterlab_google_analytics"
+name = "jupyterlab_anaconda_analytics"
 
 lab_path = (HERE / pkg_json["jupyterlab"]["outputDir"])
 

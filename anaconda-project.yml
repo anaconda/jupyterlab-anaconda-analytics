@@ -1,0 +1,38 @@
+# This is an Anaconda project file.
+#
+# Here you can describe your project and how to run it.
+# Use `anaconda-project run` to run the project.
+# The file is in YAML format, please see http://www.yaml.org/start.html for more.
+#
+
+#
+# Set the 'name' key to name your project
+#
+name: jupyterlab-anaconda-analytics
+
+packages:
+  - python=3.9
+  - jupyterlab=3.4 # newer version has odd behavior with tabs
+  - nodejs
+  - jupyter-packaging
+  - pip:
+      - build
+
+commands:
+  setup:
+    unix: |
+      pip install -ve ".[test]"
+      jupyter labextension develop --overwrite .
+      jupyter server extension enable jupyterlab_anaconda_analytics
+      jupyter labextension list
+  build:
+    unix: python -m build
+  jupyterlab:
+    unix: jupyter lab
+  test:
+    unix: |
+      pytest \
+        --cov-report html:coverage/py \
+        --cov-report term:skip-covered \
+        --cov=jupyterlab_anaconda_analytics \
+        ./jupyterlab_anaconda_analytics

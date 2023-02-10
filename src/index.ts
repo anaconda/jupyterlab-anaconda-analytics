@@ -4,51 +4,43 @@ import {
 } from '@jupyterlab/application';
 
 import { ISettingRegistry } from '@jupyterlab/settingregistry';
-import { Token } from '@lumino/coreutils';
 
-export const IGa = new Token<IGa>('jupyterlab-google-analytics:plugin:IGa');
-export interface IGa {
-  gtag: (...args: any[]) => void;
-  config: (options: any) => void;
-}
+import { ScriptMetadata } from './config';
+import { loadApp } from './utils';
 
 /**
- * Initialization data for the jupyterlab-google-analytics extension.
+ * Initialization data for the jupyterlab-anaconda-analytics extension.
  */
-const plugin: JupyterFrontEndPlugin<IGa> = {
-  id: 'jupyterlab-google-analytics:plugin',
+const plugin: JupyterFrontEndPlugin<void> = {
+  id: 'jupyterlab-anaconda-analytics:plugin',
   autoStart: true,
-  provides: IGa,
   requires: [ISettingRegistry],
   activate: async (
     app: JupyterFrontEnd,
     settingRegistry: ISettingRegistry
-  ): Promise<IGa> => {
-    const setting = await settingRegistry.load(plugin.id);
-    const trackingId = setting.get('trackingId').composite as string;
+  ): Promise<any> => {
+    try {
+      const scriptMetaData: ScriptMetadata[] = [];
+      // Load plugin into the settings registry.
+      const settings = await settingRegistry.load(plugin.id);
 
-    var ga_url = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
-    const a = document.createElement('script');
-    const m = document.getElementsByTagName('script')[0];
-    a.async = true;
-    a.src = ga_url;
-    m.parentNode?.insertBefore(a, m);
+      // Get google analytics tracking id
+      const gaAnalytics = settings.get('ga').composite as string;
+      // Get heap analytics tracking id
+      const heapAnalytics = settings.get('heap').composite as string;
 
-    // Activate the Global Site Tag
-    const windowAnalytics = window as any;
-    windowAnalytics.dataLayer = windowAnalytics.dataLayer || [];
-    windowAnalytics.gtag = function () {
-      windowAnalytics.dataLayer.push(arguments);
-    };
+      // push the tracking id's into the array
+      scriptMetaData.push(
+        { id: 'ga', secret: gaAnalytics },
+        { id: 'heap', secret: heapAnalytics }
+      );
 
-    windowAnalytics.gtag('js', new Date());
-    windowAnalytics.gtag('config', trackingId);
-
-    return {
-      gtag: windowAnalytics.gtag,
-      config: (options: any) =>
-        windowAnalytics.gtag('config', trackingId, options)
-    };
+      scriptMetaData.forEach((app: ScriptMetadata) => {
+        loadApp(app.id, app.secret);
+      });
+    } catch (err) {
+      console.error(err);
+    }
   }
 };
 

@@ -1,18 +1,18 @@
-# jupyterlab_google_analytics
+# jupyterlab_anaconda_analytics
 
-[![Github Actions Status](https://github.com/team-monolith-product/jupyterlab-google-analytics/workflows/Build/badge.svg)](https://github.com/team-monolith-product/jupyterlab-google-analytics/actions/workflows/build.yml)
-A JupyterLab extension.
+[![Github Actions Status](https://github.com/anaconda/jupyterlab-anaconda-analytics/workflows/Build/badge.svg)](https://github.com/anaconda/jupyterlab-anaconda-analytics/actions/workflows/build.yml)
+Anaconda Notebooks analytics widget extension
 
 ## Requirements
 
-- JupyterLab >= 3.0
+- JupyterLab >= 3.4
 
 ## Install
 
 To install the extension, execute:
 
 ```bash
-pip install jupyterlab_google_analytics
+pip install jupyterlab_anaconda_analytics
 ```
 
 ## Uninstall
@@ -20,7 +20,7 @@ pip install jupyterlab_google_analytics
 To remove the extension, execute:
 
 ```bash
-pip uninstall jupyterlab_google_analytics
+pip uninstall jupyterlab_anaconda_analytics
 ```
 
 ## Contributing
@@ -35,7 +35,7 @@ The `jlpm` command is JupyterLab's pinned version of
 
 ```bash
 # Clone the repo to your local environment
-# Change directory to the jupyterlab_google_analytics directory
+# Change directory to the jupyterlab_anaconda_analytics directory
 # Install package in development mode
 pip install -e .
 # Link your development version of the extension with JupyterLab
@@ -64,12 +64,12 @@ jupyter lab build --minimize=False
 ### Development uninstall
 
 ```bash
-pip uninstall jupyterlab_google_analytics
+pip uninstall jupyterlab_anaconda_analytics
 ```
 
 In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
 command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
-folder is located. Then you can remove the symlink named `jupyterlab-google-analytics` within that folder.
+folder is located. Then you can remove the symlink named `jupyterlab-anaconda-analytics` within that folder.
 
 ### Testing the extension
 
