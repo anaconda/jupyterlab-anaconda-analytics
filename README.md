@@ -5,7 +5,7 @@ Anaconda Notebooks analytics widget extension
 
 ## Requirements
 
-- JupyterLab >= 3.0
+- JupyterLab >= 3.4
 
 ## Install
 
