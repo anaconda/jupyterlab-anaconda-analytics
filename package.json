@@ -66,8 +66,8 @@
   "devDependencies": {
     "@babel/core": "^7.20.10",
     "@babel/preset-env": "^7.20.0",
-    "@jupyterlab/builder": "3.4.7",
-    "@jupyterlab/testutils": "3.4.7",
+    "@jupyterlab/builder": "3.5.1",
+    "@jupyterlab/testutils": "3.5.1",
     "@types/jest": "^29.4.0",
     "@types/mocha": "^10.0.0",
     "@types/react": "^17.0.2",
