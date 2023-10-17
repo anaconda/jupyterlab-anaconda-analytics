@@ -128,7 +128,7 @@ jobs:
         run: jlpm install
 
       - name: Set up browser cache
-        uses: actions/cache@937d24475381cd9c75ae6db12cb4e79714b926ed # tag=v2
+        uses: actions/cache@8492260343ad570701412c2f464a5877dc76bace # v2
         with:
           path: |
             ${{ github.workspace }}/pw-browsers
