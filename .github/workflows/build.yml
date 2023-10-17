@@ -71,7 +71,7 @@ jobs:
         with:
           python-version: '3.9'
           architecture: 'x64'
-      - uses: actions/download-artifact@f023be2c48cc18debc3bacd34cb396e0295e2869 # tag=v2
+      - uses: actions/download-artifact@cbed621e49e4c01b044d60f6c80ea4ed6328b281 # v2
         with:
           name: extension-artifacts
       - name: Install and Test
@@ -112,7 +112,7 @@ jobs:
           echo "//npm.fontawesome.com/:_authToken=${{secrets.FONTAWESOME_TOKEN}}" >> .npmrc
 
       - name: Download extension package
-        uses: actions/download-artifact@f023be2c48cc18debc3bacd34cb396e0295e2869 # tag=v2
+        uses: actions/download-artifact@cbed621e49e4c01b044d60f6c80ea4ed6328b281 # v2
         with:
           name: extension-artifacts
 
