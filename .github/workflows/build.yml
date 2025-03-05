@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
 
       - name: Base Setup
-        uses: jupyterlab/maintainer-tools/.github/actions/base-setup@5d8587d08e9762a195bb48883aa9686b942a2970 # tag=v1
+        uses: jupyterlab/maintainer-tools/.github/actions/base-setup@d5b08e36724fe4271b4751cc0d84c80c2e5c982c # v1
 
       - name: Install dependencies
         run: python -m pip install -U jupyterlab==3.4
@@ -104,7 +104,7 @@ jobs:
         uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
 
       - name: Base Setup
-        uses: jupyterlab/maintainer-tools/.github/actions/base-setup@5d8587d08e9762a195bb48883aa9686b942a2970 # tag=v1
+        uses: jupyterlab/maintainer-tools/.github/actions/base-setup@d5b08e36724fe4271b4751cc0d84c80c2e5c982c # v1
 
       - name: Setup .npmrc
         run: |
