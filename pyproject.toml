@@ -15,7 +15,7 @@ authors = [
 ]
 keywords = ["Jupyter", "JupyterLab", "JupyterLab3"]
 dependencies = [
-    "jupyter_server>=1.6,<2",
+    "jupyter_server>=2.20,<3",
     "httpx"
 ]
 
