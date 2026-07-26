@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
 
       - name: Base Setup
         uses: jupyterlab/maintainer-tools/.github/actions/base-setup@5d8587d08e9762a195bb48883aa9686b942a2970 # tag=v1
@@ -65,7 +65,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
       - name: Install Python
         uses: actions/setup-python@7f80679172b057fc5e90d70d197929d454754a5a # tag=v2
         with:
@@ -101,7 +101,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@7884fcad6b5d53d10323aee724dc68d8b9096a2e # tag=v2
+        uses: actions/checkout@0717577d45739eb3c851188b29f50ed6c0b2194e # v2
 
       - name: Base Setup
         uses: jupyterlab/maintainer-tools/.github/actions/base-setup@5d8587d08e9762a195bb48883aa9686b942a2970 # tag=v1
